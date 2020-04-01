@@ -1,0 +1,28 @@
+
+<h1 class="animated fadeIn">Heroes <small>Lista de heroes disponible</small></h1>
+
+<hr>
+
+<div class="row">
+    <div class="table-responsive-sm">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Publicado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let hero of heroes; let i = index;">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ hero.name }}</td>
+                  <td>{{ hero.bio }}</td>
+                  <td> {{ hero.release }} </td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+ 
+</div>

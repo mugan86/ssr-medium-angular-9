@@ -11,6 +11,13 @@ const routes: Routes = [
       )
   },
   {
+    path: 'heroes',
+    loadChildren: () =>
+      import('./@pages/heroes/heroes.module').then(
+        m => m.HeroesModule
+      )
+  },
+  {
     path: 'not-page-found',
     loadChildren: () =>
       import('./@pages/notpagefound/notpagefound.module').then(
@@ -25,7 +32,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      useHash: true,
+      scrollPositionRestoration: 'enabled'
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
